@@ -1,0 +1,36 @@
+.dashboard_header {
+  background-color: white;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 24px;
+  /* justify-content: space-around; */
+}
+
+.search_form {
+  display: flex;
+  height: 10px;
+  margin-top: 8px;
+  margin-bottom: 5px;
+}
+.search_text {
+  width: 275px;
+  margin-left: 25px;
+}
+
+.search_button {
+  background-color: #615eb2;
+  width: 100px;
+  height: 35px;
+  margin-left: 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.user {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 0;
+}
