@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import { Layout } from "antd";
+import "antd/dist/antd.css";
 import DashBoardHeader from "../components/DashBoardHeader.jsx";
-import Sidebar from "./Sidebar.jsx";
+import Sidebar from "./Sidebar";
+import DashBoardMain from "./DashBoardMain.jsx";
 
-const DashBoard = () => (
-  <div className="homepage-container">
-    <Sidebar />
-    <main className="content-section">
-      <DashBoardHeader />
-    </main>
-  </div>
-);
+import "../styles/dashboard.css";
+
+const DashBoard = () => {
+  const [isOpen, setOpen] = useState(true);
+  const toggle = () => setOpen(!isOpen);
+  return (
+    <div className="App wrapper">
+      <Sidebar toggle={toggle} isOpen={isOpen} />
+      <DashBoardMain toggle={toggle} isOpen={isOpen} />
+    </div>
+  );
+};
 
 export default DashBoard;

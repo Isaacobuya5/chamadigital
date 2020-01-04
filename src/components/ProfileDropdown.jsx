@@ -15,9 +15,12 @@ const ProfileDropdown = ({ logout }) => (
       <Media className="align-items-center">
         <span className="user_name">
           John Doe
-          <i className="fas fa-angle-down caret_icon"></i>
           {/* <img src={avator} alt='Avatar' className='avatar_face' /> */}
         </span>
+        <i
+          style={{ paddingLeft: "10px" }}
+          className="fas fa-angle-down caret_icon"
+        ></i>
       </Media>
       {/* <i className="far fa-angle-down"></i> */}
     </DropdownToggle>

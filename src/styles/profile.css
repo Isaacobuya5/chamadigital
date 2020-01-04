@@ -1,6 +1,19 @@
-.user_name {
-  color: #000000;
+.profile_dropdown .nav-item {
+  font-size: 12px !important;
+  border: none !important;
 }
-.caret_icon {
-  padding-left: 8px;
+
+.user_name {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile_dropdown .nav-link {
+  padding: none !important;
+  color: #000000;
+  font-size: 18px;
+}
+
+.profile_dropdown .nav-link a:hover {
+  background-color: transparent !important;
 }

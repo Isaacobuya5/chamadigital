@@ -1,0 +1,38 @@
+/* .main_content {
+  background-color: #f3f5f9;
+  display: flex;
+  height: 100%;
+  margin: 10px 5px;
+  border: solid 0.3px;
+} */
+
+.summary {
+  display: flex;
+}
+
+.financial_summary {
+  background: white;
+  width: 490px;
+  height: 400px;
+  margin-top: 20px;
+  margin-left: 8px;
+  display: block;
+}
+.financial_cards {
+  display: flex;
+  margin-top: 0px;
+}
+
+.messages {
+  background: white;
+  width: 490px;
+  height: 400px;
+  margin-top: 20px;
+  margin-left: 8px;
+  display: flex;
+}
+.title {
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+}

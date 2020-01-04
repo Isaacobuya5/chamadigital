@@ -1,13 +1,16 @@
-.dashboard_header {
-  background-color: white;
+/* .dashboard_header { */
+/* background-color: white;
   height: 50px;
   display: flex;
   flex-direction: row;
   padding-right: 24px;
-  /* justify-content: space-around; */
-}
+  justify-content: space-around; */
+/* display: flex; */
+/* align-items: flex-end;
+  justify-content: flex-end; */
+/* } */
 
-.search_form {
+/* .search_form {
   display: flex;
   height: 10px;
   margin-top: 8px;
@@ -33,4 +36,17 @@
   display: flex;
   margin-left: 10px;
   margin-right: 0;
+} */
+
+.header {
+  background-color: #ffffff;
+}
+.user {
+  display: flex;
+  margin-left: 10px;
+  margin-right: 0;
+}
+
+.nav-bar .nav-item:hover {
+  background: transparent !important;
 }

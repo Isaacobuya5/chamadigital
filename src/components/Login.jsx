@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 import "../styles/login.css";
 
 class Login extends React.Component {
@@ -30,7 +31,7 @@ class Login extends React.Component {
                 />
               </div>
               <div className="login_button">
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" onClick={() => this.props.history.push("/dashboard")} className="btn btn-primary">
                   Submit
                 </button>
               </div>
@@ -42,4 +43,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

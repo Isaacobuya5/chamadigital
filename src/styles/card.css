@@ -1,0 +1,71 @@
+.summary {
+  margin-top: "20px";
+  display: flex;
+}
+.small_cards {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 250px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+.medium_cards {
+  width: 260px;
+  height: 300px;
+  margin-top: 20px;
+  margin-left: 10px;
+  display: flex;
+}
+
+.extra_small {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  width: 150px;
+  height: 140px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0px;
+  display: flex;
+  align-items: center;
+}
+
+.small_icons {
+  width: 90px;
+  height: 90px;
+}
+
+.medium_icons {
+  width: 200px;
+  height: 200px;
+}
+
+.xsmall_icons {
+  width: 170px;
+  height: 170px;
+}
+
+.large_cards .total_description {
+  margin-left: 0px !important;
+  font-weight: bold;
+}
+.medium_cards .total_description {
+  margin-top: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.extra_small .total_description {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.total_description {
+  /* padding-top: 8px; */
+  color: black;
+}
+
+.amount {
+  font-family: Arial, Helvetica, sans-serif;
+}

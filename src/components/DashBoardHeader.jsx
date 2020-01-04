@@ -64,7 +64,17 @@ const DashBoardHeader = () => {
   const classes = useStyles();
   return (
     <div>
-      <Navbar style={{ background: "#ffff" }} light expand="md">
+      <Navbar
+        style={{
+          background: "#ffff",
+          borderBottom: "0.5px solid",
+          marginLeft: "-1.28%",
+          marginRight: "-1.28%"
+        }}
+        light
+        expand="md"
+        className="nav-bar"
+      >
         <NavbarToggler />
         <Collapse navbar>
           <Nav className="mr-auto" navbar>
@@ -87,7 +97,9 @@ const DashBoardHeader = () => {
               </div>
             </NavItem>
           </Nav>
-          <ProfileDropdown />
+          <div className="profile_dropdown">
+            <ProfileDropdown />
+          </div>
         </Collapse>
       </Navbar>
     </div>
