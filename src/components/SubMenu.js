@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { Collapse, NavItem, NavLink } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import classNames from "classnames";
@@ -7,10 +8,7 @@ import { Link } from "react-router-dom";
 const SubMenu = props => {
   const [collapsed, setCollapsed] = useState(true);
   const toggleNavbar = () => setCollapsed(!collapsed);
-  const { icon, title, items } = props;
-
-  console.log(props.items);
-
+  const { title, items } = props;
   return (
     <div>
       <NavItem
@@ -24,7 +22,7 @@ const SubMenu = props => {
         navbar
         className={classNames("items-menu", { "mb-1": !collapsed })}
       >
-        {props.items.map((item, index) => (
+        {items.map((item, index) => (
           <NavItem key={index} className="pl-4">
             <NavLink tag={Link} to={item.target}>
               <FontAwesomeIcon icon={item.icon} className="mr-2" />
@@ -37,4 +35,8 @@ const SubMenu = props => {
   );
 };
 
+SubMenu.propTypes = {
+  items: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired
+};
 export default SubMenu;

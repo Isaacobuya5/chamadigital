@@ -1,5 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+import PropTypes from "prop-types";
 import {
   UncontrolledDropdown,
   DropdownMenu,
@@ -9,7 +10,7 @@ import {
 } from "reactstrap";
 import "../styles/profile.css";
 
-const ProfileDropdown = ({ logout }) => (
+const ProfileDropdown = ({ logout, history }) => (
   <UncontrolledDropdown nav>
     <DropdownToggle className="pr-0" nav>
       <Media className="align-items-center">
@@ -33,10 +34,15 @@ const ProfileDropdown = ({ logout }) => (
       <hr />
       <DropdownItem onClick={logout}>
         <i className="fas fa-running" />
-        <span> Logout</span>
+        <span onClick={() => history.push("/")}> Logout</span>
       </DropdownItem>
     </DropdownMenu>
   </UncontrolledDropdown>
 );
 
-export default ProfileDropdown;
+ProfileDropdown.propTypes = {
+  logout: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired
+};
+
+export default withRouter(ProfileDropdown);

@@ -1,10 +1,10 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+
 import { faUserPlus, faUsers } from "@fortawesome/free-solid-svg-icons";
 import SubMenu from "./SubMenu";
-import { NavItem, NavLink, Nav } from "reactstrap";
+import { NavItem, Nav } from "reactstrap";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 
 import "../styles/sidebar.css";
 
@@ -47,12 +47,12 @@ const submenus = [
     {
       title: "Add Member",
       icon: faUserPlus,
-      target: "Home-1"
+      target: "add_member"
     },
     {
       title: "View Members",
       icon: faUsers,
-      target: "Home-2"
+      target: "view_members"
     }
   ],
   [
@@ -92,5 +92,10 @@ const submenus = [
     }
   ]
 ];
+
+SideBar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  toggle: PropTypes.func.isRequired
+};
 
 export default SideBar;

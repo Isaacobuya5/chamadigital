@@ -1,11 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Card } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "../styles/card.css";
 
 const CardComponent = ({ items, Icon }) => {
   const { text, total, small, medium, x_small } = items;
-  console.log(items);
 
   // console.log(icon);
   return (
@@ -34,6 +34,11 @@ const CardComponent = ({ items, Icon }) => {
       )}
     </Card>
   );
+};
+
+CardComponent.propTypes = {
+  items: PropTypes.object.isRequired,
+  Icon: PropTypes.func.isRequired
 };
 
 export default CardComponent;
