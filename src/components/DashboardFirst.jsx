@@ -1,7 +1,5 @@
 import React from "react";
-import classNames from "classnames";
-import { Container, Col, Row } from "reactstrap";
-import PropTypes from "prop-types";
+import { Col, Row } from "reactstrap";
 
 import CardComponent from "./Card.jsx";
 import MessagesTable from "./Messages.jsx";

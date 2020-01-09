@@ -3,7 +3,9 @@ import "../styles/footer.css";
 
 const Footer = () => (
   <div className="footer">
-    <p>2020 &copy; All Rights Reserved. Powered by ChamaDigital</p>
+    <p>
+      <u>2020 &copy; All Rights Reserved. Powered by ChamaDigital</u>
+    </p>
   </div>
 );
 

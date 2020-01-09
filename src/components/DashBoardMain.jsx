@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 // import all required components
 import DashBoardHeader from "./DashBoardHeader.jsx";
 import DashBoardFirst from "./DashboardFirst.jsx";
+import AddMember from "./AddMember.jsx";
 // import CardComponent from "./Card.jsx";
 // import MessagesTable from "./Messages.jsx";
 import Footer from "./Footer.jsx";
@@ -44,13 +45,8 @@ const DashBoardMain = props => {
       >
         <Switch>
           <Route exact path="/dashboard" component={DashBoardFirst} />
+          <Route path="/dashboard/add_member" component={AddMember} />
           <Route
-            exact
-            path="/dashboard/add_member"
-            component={() => "Add a New Member"}
-          />
-          <Route
-            exact
             path="/dashboard/view_members"
             component={() => "View Registered members"}
           />

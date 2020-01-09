@@ -7,7 +7,7 @@ const Login = ({ history }) => (
   <div className="login">
     <div className="card" style={{ width: "22rem" }}>
       <div className="card-body">
-        <h5 className="card-title login_title">Login in into Chama Digital</h5>
+        <h5 className="card-title login_title">Login into Chama Digital</h5>
         <hr />
         <form>
           <div className="form-group">

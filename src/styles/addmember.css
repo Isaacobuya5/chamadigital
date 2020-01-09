@@ -1,0 +1,31 @@
+.members_form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-title {
+  margin-bottom: 0px !important;
+  color: #707070;
+}
+
+.register_member {
+  margin: 0 20px;
+}
+.form-group {
+  margin-bottom: 2rem;
+}
+asterik {
+  color: red;
+  margin-right: 8px;
+}
+label {
+  font-weight: bold;
+  color: #000000;
+}
+
+.register_button {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

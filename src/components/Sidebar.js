@@ -47,12 +47,12 @@ const submenus = [
     {
       title: "Add Member",
       icon: faUserPlus,
-      target: "add_member"
+      target: "/dashboard/add_member"
     },
     {
       title: "View Members",
       icon: faUsers,
-      target: "view_members"
+      target: "/dashboard/view_members"
     }
   ],
   [

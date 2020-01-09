@@ -7,6 +7,8 @@ import ReactDOM from "react-dom";
 
 ReactDOM.render(
   <BrowserRouter>
+    {/* header */}
+    {/* sidebar */}
     <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path="/dashboard" component={DashBoard} />
