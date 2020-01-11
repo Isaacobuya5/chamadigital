@@ -1,0 +1,10 @@
+.view_members {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.members_table {
+  margin-left: 10px;
+  margin-right: 10px;
+}

@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import DashBoardHeader from "./DashBoardHeader.jsx";
 import DashBoardFirst from "./DashboardFirst.jsx";
 import AddMember from "./AddMember.jsx";
+import ViewMembers from "./ViewMembers.jsx";
 // import CardComponent from "./Card.jsx";
 // import MessagesTable from "./Messages.jsx";
 import Footer from "./Footer.jsx";
@@ -46,10 +47,7 @@ const DashBoardMain = props => {
         <Switch>
           <Route exact path="/dashboard" component={DashBoardFirst} />
           <Route path="/dashboard/add_member" component={AddMember} />
-          <Route
-            path="/dashboard/view_members"
-            component={() => "View Registered members"}
-          />
+          <Route path="/dashboard/view_members" component={ViewMembers} />
         </Switch>
       </div>
       <div

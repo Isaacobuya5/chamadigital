@@ -1,0 +1,16 @@
+.btn-secondary {
+  background-color: #7975de !important;
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  background-color: #eeeef8 !important;
+}
+
+.dropdown-item {
+}
+
+.dropdown-divider {
+  border-top: 1px solid #000000 !important;
+  opacity: 0.5;
+}
