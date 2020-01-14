@@ -22,12 +22,12 @@ const MembersTable = ({ members }) => (
         {members.map((member, index) => (
           <tr key={index}>
             <td scope="row">{index + 1}</td>
-            <td data-label={Object.keys(member)[0]}>
+            <td data-label="Full Name">
               {member.firstName} {member.lastName}
             </td>
-            <td data-label={Object.keys(member)[1]}>{member.IdNum}</td>
-            <td data-label={Object.keys(member)[2]}>{member.phone}</td>
-            <td data-label={Object.keys(member)[3]}>{member.email}</td>
+            <td data-label={Object.keys(member)[2]}>{member.IdNum}</td>
+            <td data-label={Object.keys(member)[3]}>{member.phone}</td>
+            <td data-label={Object.keys(member)[4]}>{member.email}</td>
             <td data-label="Total Contributions">0</td>
             <td data-label="Total Fines">0</td>
             <td data-label="Action">
