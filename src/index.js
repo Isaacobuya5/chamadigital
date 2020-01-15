@@ -7,6 +7,7 @@ import DashBoard from "../src/components/DashBoard.jsx";
 // import redux store
 import configureStore from "./redux/configureStore";
 import { Provider as ReduxProvider } from "react-redux";
+
 import ReactDOM from "react-dom";
 
 const store = configureStore();

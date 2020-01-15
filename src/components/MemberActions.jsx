@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { deleteMember } from "../redux/members/members.actionss";
+import { deleteRegistered } from "../redux/members/members.actionss";
+import { toast } from "react-toastify";
 import {
   ButtonDropdown,
   DropdownToggle,
@@ -32,7 +33,15 @@ const MemberActions = ({ member, deleteMember }) => {
             <i className="fas fa-eye"></i> View Member
           </DropdownItem>
           <DropdownItem divider />
-          <DropdownItem onClick={() => deleteMember(member)}>
+          <DropdownItem
+            onClick={() => {
+              deleteMember(member).then(() =>
+                toast
+                  .success("Delete Succesful")
+                  .catch(error => toast.warn("Unable to delete"))
+              );
+            }}
+          >
             <i className="fas fa-trash-alt"></i> Delete Member
           </DropdownItem>
         </DropdownMenu>
@@ -49,7 +58,7 @@ const MemberActions = ({ member, deleteMember }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    deleteMember: member => dispatch(deleteMember(member))
+    deleteMember: member => dispatch(deleteRegistered(member))
   };
 };
 

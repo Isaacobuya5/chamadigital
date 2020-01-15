@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+import { loadRegisteredMembers } from "../redux/members/members.actionss";
 import { Col, Row, Card } from "reactstrap";
+import Spinner from "../common/Spinner";
 import MembersTable from "./MembersTable.jsx";
 
 import "../styles/viewmembers.css";
 
-const ViewMembers = ({ members }) => {
-  return (
+const ViewMembers = ({ members, loadRegisteredMembers }) => {
+  //{ members, loadRegisteredMembers }
+  // add
+  useEffect(() => {
+    if (members.length === 0) {
+      loadRegisteredMembers().catch(error => alert("Loading members failed"));
+    }
+  },[]);
+
+  return members.length === 0 ? (
+    <Spinner />
+  ) : (
     <div className="view_members">
       <Row>
         <Col sm="12" md="8">
@@ -43,7 +55,8 @@ const ViewMembers = ({ members }) => {
 };
 
 ViewMembers.propTypes = {
-  members: PropTypes.array.isRequired
+  members: PropTypes.array.isRequired,
+  loadRegisteredMembers: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ members }) => {
@@ -52,4 +65,8 @@ const mapStateToProps = ({ members }) => {
   };
 };
 
-export default connect(mapStateToProps)(ViewMembers);
+const mapDispatchToProps = dispatch => ({
+  loadRegisteredMembers: () => dispatch(loadRegisteredMembers())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ViewMembers);

@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { updateMember } from "../redux/members/members.actionss";
+import { editMember } from "../redux/members/members.actionss";
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+import { toast } from "react-toastify";
 
 import "../styles/edit_modal.css";
 
 const EditMember = ({ modal, toggle, className, member, updateMember }) => {
   const [currentMember, setCurrentMember] = useState(member);
-
+  console.log(currentMember);
   const handleChange = e => {
     e.preventDefault();
     return setCurrentMember({
       ...currentMember,
-      [e.target.name]: [e.target.value]
+      [e.target.name]: e.target.value
     });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     updateMember(currentMember);
+    toast.success("Update Succesful");
   };
 
   const { firstName, lastName, IdNum, phone, email, address } = currentMember;
+  // console.log(currentMember);
   return (
     <Modal isOpen={modal} toggle={toggle} className={className}>
       <ModalHeader toggle={toggle}>Edit Member Details</ModalHeader>
@@ -110,7 +113,7 @@ const EditMember = ({ modal, toggle, className, member, updateMember }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateMember: member => dispatch(updateMember(member))
+    updateMember: member => dispatch(editMember(member))
   };
 };
 

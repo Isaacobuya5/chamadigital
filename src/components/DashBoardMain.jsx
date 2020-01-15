@@ -8,6 +8,9 @@ import DashBoardHeader from "./DashBoardHeader.jsx";
 import DashBoardFirst from "./DashboardFirst.jsx";
 import AddMember from "./AddMember.jsx";
 import ViewMembers from "./ViewMembers.jsx";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import CardComponent from "./Card.jsx";
 // import MessagesTable from "./Messages.jsx";
 import Footer from "./Footer.jsx";
@@ -49,6 +52,7 @@ const DashBoardMain = props => {
           <Route path="/dashboard/add_member" component={AddMember} />
           <Route path="/dashboard/view_members" component={ViewMembers} />
         </Switch>
+        <ToastContainer autoClose={3000} hideProgressBar />
       </div>
       <div
         style={{
