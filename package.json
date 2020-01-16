@@ -12,7 +12,7 @@
     "clean:build": "rimraf ./build && mkdir build",
     "prebuild": "run-p clean:build",
     "build": "webpack --config webpack.config.prod.js",
-    "postbuild": "run-p start:api serve:build"
+    "postbuild": "run-p start:api"
   },
   "author": "",
   "license": "ISC",
