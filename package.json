@@ -12,7 +12,7 @@
     "clean:build": "rimraf ./build && mkdir build",
     "prebuild": "run-p clean:build",
     "build": "webpack --config webpack.config.prod.js",
-    "heroku-postbuild": "npm run build"
+    "postbuild": "run-p start:api serve:build"
   },
   "author": "",
   "license": "ISC",
