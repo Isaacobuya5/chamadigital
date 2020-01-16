@@ -11,9 +11,7 @@
     "start:api": "node ./src/backend/server.js",
     "clean:build": "rimraf ./build && mkdir build",
     "prebuild": "run-p clean:build",
-    "build": "webpack --config webpack.config.prod.js",
-    "postbuild": "run-p start:api serve:build",
-    "serve:build": "http-server ./build"
+    "build": "webpack --config webpack.config.prod.js"
   },
   "author": "",
   "license": "ISC",

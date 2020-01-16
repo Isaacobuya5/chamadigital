@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(cors());
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 // member routes
 const memberRoutes = require("./routes/members");
