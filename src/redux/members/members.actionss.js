@@ -50,21 +50,21 @@ export function saveMember(member) {
 }
 
 // editing a member
-export function editMember(member) {
-  return function(dispatch) {
-    dispatch(beginApiCall());
-    return membersApi
-      .editMember(member)
-      .then(savedMember => {
-        // update an existing member or add a new member
-        dispatch(updateMember(savedMember));
-      })
-      .catch(error => {
-        dispatch(apiCallError(error));
-        throw error;
-      });
-  };
-}
+// export function editMember(member) {
+//   return function(dispatch) {
+//     dispatch(beginApiCall());
+//     return membersApi
+//       .editMember(member)
+//       .then(savedMember => {
+//         // update an existing member or add a new member
+//         dispatch(updateMember(savedMember));
+//       })
+//       .catch(error => {
+//         dispatch(apiCallError(error));
+//         throw error;
+//       });
+//   };
+// }
 // loading members
 export function loadRegisteredMembers() {
   return function(dispatch) {
@@ -74,6 +74,27 @@ export function loadRegisteredMembers() {
       .then(members => {
         dispatch(loadMembers(members));
       })
+      .catch(error => {
+        dispatch(apiCallError(error));
+        throw error;
+      });
+  };
+}
+
+// update member optimistically
+export function updateMemberOptimistic(member) {
+  return {
+    type: types.UPDATE_MEMBER_OPTIMISTIC,
+    member
+  };
+}
+
+export function editMember(member) {
+  return function(dispatch) {
+    dispatch(updateMemberOptimistic(member));
+    return membersApi
+      .editMember(member)
+      .then(() => {})
       .catch(error => {
         dispatch(apiCallError(error));
         throw error;

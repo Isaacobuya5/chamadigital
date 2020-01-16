@@ -7,7 +7,7 @@ export default function membersReducer(state = initialState.members, action) {
       return [...state, { ...action.member }];
     case types.LOAD_MEMBERS_SUCCESS:
       return action.members;
-    case types.UPDATE_MEMBER_SUCCESS:
+    case types.UPDATE_MEMBER_OPTIMISTIC:
       return state.map(member =>
         member._id === action.member._id ? action.member : member
       );

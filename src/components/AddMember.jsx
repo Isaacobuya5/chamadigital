@@ -21,7 +21,9 @@ const AddMember = ({ saveMember, history }) => {
 
   const { firstName, lastName, IdNum, phone, email, address } = member;
 
-  const [saving, setSaving] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  // const [saving, setSaving] = useState(false);
 
   const handleChange = event => {
     event.preventDefault();
@@ -34,7 +36,7 @@ const AddMember = ({ saveMember, history }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    setSaving(true);
+    // setSaving(true);
     saveMember(member)
       .then(() => {
         // toast message
@@ -42,7 +44,7 @@ const AddMember = ({ saveMember, history }) => {
         history.push("/dashboard/view_members");
       })
       .catch(error => {
-        setSaving(false);
+        // setSaving(false);
         // setting errors
       });
   };

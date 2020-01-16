@@ -6,4 +6,5 @@ export const DELETE_MEMBER_SUCCESS = "DELETE_MEMBER_SUCCESS";
 // action types for keeping track of API status
 export const BEGIN_API_CALL = "BEGIN_API_CALL";
 export const API_CALL_ERROR = "API_CALL_ERROR";
+export const UPDATE_MEMBER_OPTIMISTIC = "UPDATE_MEMBER_OPTIMISTIC";
 export const DELETE_MEMBER_OPTIMISTIC = "DELETE_MEMBER_OPTIMISTIC";
