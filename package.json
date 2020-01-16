@@ -8,7 +8,7 @@
     "start": "run-p svgr start:dev start:api ",
     "svgr": "svgr -d src/icons/  assets/",
     "start:dev": "webpack-dev-server --config webpack.config.dev.js --port 3000 --open",
-    "start:api": "nodemon ./src/backend/server.js",
+    "start:api": "node ./src/backend/server.js",
     "clean:build": "rimraf ./build && mkdir build",
     "prebuild": "run-p clean:build",
     "build": "webpack --config webpack.config.prod.js",
