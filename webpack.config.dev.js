@@ -3,7 +3,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // enables babel to know that we are running in development mode
-process.env.NODE_ENV = "development";
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 
 module.exports = {
   mode: "development",
