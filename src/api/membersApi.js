@@ -1,5 +1,6 @@
 import { handleResponse, handleError } from "./apiUtils";
-const baseUrl = "http://localhost:8080/api/members";
+// const baseUrl = "http://localhost:8080/api/members";
+const baseUrl = "https://chamadigital.herokuapp.com/api/members";
 
 // get all members
 export function getMembers() {
