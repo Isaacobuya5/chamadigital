@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm-run-all svgr start:dev start:api ",
+    "start": "npm-run-all --parallel svgr start:dev start:api ",
     "svgr": "svgr -d src/icons/  assets/",
     "start:dev": "webpack-dev-server --config webpack.config.dev.js --port 3000 --open",
     "start:api": "node ./src/backend/server.js",
