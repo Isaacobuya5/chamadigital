@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { loadRegisteredMembers } from "../redux/members/members.actionss";
 import { fetchMembers } from "../common/fetchMembers";
 
+import ViewAttendance from "./ViewAttendance.jsx";
+
 import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
 
 const Attendance = ({
@@ -15,41 +17,59 @@ const Attendance = ({
   fetchMembers(members, loadRegisteredMembers);
 
   const [register, setRegister] = useState({
-    memberName: "",
-    time: ""
+    memberName: ""
   });
 
-  const [checkedIn, setCheckIn] = useState(false);
+  const [checkedIn, setCheckedIn] = useState(false);
 
-  const { memberName, time } = register;
+  const [time, setTime] = useState("Not checked");
+
+  const { memberName } = register;
+
+  const [attendance, setAttendance] = useState([]);
+
+  console.log(time);
 
   const handleChange = event => {
     event.preventDefault();
-    const { name, value, checked } = event.target;
-    // setRegister({
-    //   ...register,
-    //   [name]: value
-    // });
-
-    console.log({
-      [event.target.name]: event.target.value || event.target.checked
+    const { name, value } = event.target;
+    setRegister({
+      ...register,
+      [name]: value
+      //checkedIn: !checkedIn
     });
+  };
+
+  let today = new Date();
+  let currentTime =
+    today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+  const handleTimeInput = event => {
+    event.preventDefault();
+    if (checkedIn === true) {
+      setTime(currentTime);
+      console.log(time);
+    } else {
+      setTime("Not Checked");
+    }
   };
 
   const handleCheckbox = event => {
     event.preventDefault();
-    if (checkedIn === false) {
-      setCheckIn(true);
-    } else {
-      setCheckIn(false);
-    }
+    setCheckedIn(!checkedIn);
   };
-  console.log(checkedIn);
 
   const handleSubmit = event => {
     event.preventDefault();
     alert(`${memberName} ${checkedIn} ${time}`);
-    console.log(register);
+    setAttendance([
+      ...attendance,
+      {
+        memberName,
+        checkedIn,
+        time
+      }
+    ]);
   };
 
   return (
@@ -76,29 +96,43 @@ const Attendance = ({
             <div className="form-group form-check col-sm-12 col-md-3">
               <label>Checked In?</label>
               <br />
-              <input
-                type="checkbox"
-                className="form-check-input"
-                name="checkedIn"
-                checked={checkedIn === true}
-                onChange={handleCheckbox}
-              />
+              <div
+                style={{
+                  paddingTop: "15px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center"
+                }}
+              >
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  name="checkedIn"
+                  checked={checkedIn}
+                  onChange={handleCheckbox}
+                />
+              </div>
             </div>
             <div className="form-group col-sm-12 col-md-4">
               <label>Time:</label>
-              <input type="text" className="form-control" name="time" />
+              <input
+                type="text"
+                className="form-control"
+                name="time"
+                value={time}
+                onClick={handleTimeInput}
+                // disabled
+              />
             </div>
           </div>
           <Button color="success" onClick={handleSubmit}>
-            UPDATE
-          </Button>{" "}
+            RECORD
+          </Button>
         </form>
+        <hr />
+        <ViewAttendance attendance={attendance} />
       </ModalBody>
-      <ModalFooter>
-        <Button color="danger" onClick={toggle}>
-          CANCEL
-        </Button>
-      </ModalFooter>
+      <ModalFooter></ModalFooter>
     </Modal>
   );
 };
