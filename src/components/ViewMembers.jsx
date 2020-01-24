@@ -5,17 +5,12 @@ import { loadRegisteredMembers } from "../redux/members/members.actionss";
 import { Col, Row, Card } from "reactstrap";
 import Spinner from "../common/Spinner";
 import MembersTable from "./MembersTable.jsx";
+import { fetchMembers } from "../common/fetchMembers";
 
 import "../styles/viewmembers.css";
 
 const ViewMembers = ({ members, loadRegisteredMembers }) => {
-  //{ members, loadRegisteredMembers }
-  // add
-  useEffect(() => {
-    if (members.length === 0) {
-      loadRegisteredMembers().catch(error => alert("Loading members failed"));
-    }
-  },[]);
+  fetchMembers(members, loadRegisteredMembers);
 
   return members.length === 0 ? (
     <Spinner />

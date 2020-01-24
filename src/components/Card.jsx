@@ -4,7 +4,7 @@ import { Card } from "reactstrap";
 
 import "../styles/card.css";
 
-const CardComponent = ({ items, Icon }) => {
+const CardComponent = ({ items, Icon, count }) => {
   const { text, total, small, medium, x_small } = items;
 
   // console.log(icon);
@@ -27,7 +27,7 @@ const CardComponent = ({ items, Icon }) => {
       />
       {small ? (
         <span className="total_description">
-          {total} {text}
+          {count} {text}
         </span>
       ) : (
         <span className="amount">Kshs. {total}</span>
