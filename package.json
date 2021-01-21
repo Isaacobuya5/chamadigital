@@ -27,7 +27,7 @@
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "immer": "5.0.1",
+    "immer": "8.0.1",
     "mdbreact": "^4.23.1",
     "mongodb": "^3.4.1",
     "mongoose": "^5.8.7",
